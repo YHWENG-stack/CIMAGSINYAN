@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "000000000000";
+const WHATSAPP_NUMBER = "2250788038502";
 
 const categoryDetails = {
   "Cuisine": {
