@@ -284,7 +284,7 @@ function renderProducts() {
   productGrid.innerHTML = filtered.map((product) => `
     <article class="product-card">
       <div class="product-image">
-        <img src="${product.image}" alt="${product.title}" loading="lazy">
+        <img src="${product.image}" alt="${product.title}">
         <span class="badge">${product.category}</span>
       </div>
       <div class="product-info">

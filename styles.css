@@ -593,9 +593,13 @@ img {
     padding-left: 14px;
   }
 
-  .collection-grid,
-  .product-grid {
+  .collection-grid {
     grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .collection-card,
@@ -607,5 +611,42 @@ img {
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .product-card {
+    box-shadow: none;
+  }
+
+  .product-image {
+    aspect-ratio: 1 / 1;
+  }
+
+  .badge {
+    top: 8px;
+    left: 8px;
+    max-width: calc(100% - 16px);
+    padding: 5px 6px;
+    font-size: 9px;
+  }
+
+  .product-info {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .product-info h3 {
+    min-height: 40px;
+    font-size: 13px;
+    line-height: 1.32;
+  }
+
+  .product-info p {
+    display: none;
+  }
+
+  .whatsapp-button {
+    min-height: 34px;
+    padding: 0 8px;
+    font-size: 11px;
   }
 }
