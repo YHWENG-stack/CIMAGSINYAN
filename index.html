@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MINIPRIX MARKET | Selection premium pour la maison</title>
+    <meta name="description" content="MINIPRIX MARKET propose une selection elegante de produits maison, cuisine, beaute, bien-etre et eclairage. Service local en Cote d'Ivoire uniquement.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="MINIPRIX MARKET accueil">
+        <span class="brand-mark">MP</span>
+        <span>MINIPRIX MARKET</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#collections">Collections</a>
+        <a href="#catalogue">Catalogue</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="header-action" id="headerWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-media" aria-hidden="true">
+          <img src="2026-06/B0797A07-5994-46D4-93F9-F4C2561B565B.png" alt="">
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow">Selection lifestyle 2026</p>
+          <h1>MINIPRIX MARKET</h1>
+          <p class="hero-copy">Des indispensables du quotidien presentes avec une allure premium: cuisine, rangement, beaute, bien-etre, eclairage et accessoires nomades.</p>
+          <p class="service-note">Service et livraison uniquement en Cote d'Ivoire.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#catalogue">Voir les produits</a>
+            <a class="secondary-button" id="heroWhatsapp" target="_blank" rel="noopener">Demander un devis</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="collections">
+        <div class="section-heading">
+          <p class="eyebrow">Collections</p>
+          <h2>Des rayons lisibles pour acheter sans friction</h2>
+        </div>
+        <div class="collection-grid" id="collectionGrid"></div>
+      </section>
+
+      <section class="section catalogue-section" id="catalogue">
+        <div class="section-heading catalogue-heading">
+          <div>
+            <p class="eyebrow">Catalogue</p>
+            <h2>Tous les produits</h2>
+          </div>
+          <label class="search-box">
+            <span>Rechercher</span>
+            <input id="searchInput" type="search" placeholder="Lampe, cuisine, rangement..." autocomplete="off">
+          </label>
+        </div>
+        <div class="category-tabs" id="categoryTabs" aria-label="Filtrer les categories"></div>
+        <div class="catalogue-meta">
+          <span id="resultCount"></span>
+          <button class="clear-button" id="clearFilters" type="button">Tout afficher</button>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div>
+          <p class="eyebrow">Contact direct</p>
+          <h2>Une question sur un produit ou un lot?</h2>
+          <p>Envoyez un message WhatsApp et indiquez l'article souhaite. Les boutons du catalogue ajoutent automatiquement le nom du produit. MINIPRIX MARKET sert uniquement les clients situes en Cote d'Ivoire.</p>
+        </div>
+        <a class="primary-button whatsapp-large" id="footerWhatsapp" target="_blank" rel="noopener">Contacter sur WhatsApp</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>MINIPRIX MARKET</span>
+      <span>Static storefront ready for GitHub and Cloudflare Pages.</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
