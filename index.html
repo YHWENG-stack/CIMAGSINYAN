@@ -8,9 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260623-no-badges">
+    <link rel="stylesheet" href="styles.css?v=20260623-cool-tone">
   </head>
   <body>
+    <a class="mobile-catalogue-shortcut" href="#catalogue" aria-label="Retour au catalogue">
+      <span aria-hidden="true"></span>
+      Catalogue
+    </a>
+
     <main>
       <section class="hero">
         <div class="hero-media" aria-hidden="true">
@@ -25,7 +30,6 @@
           <div class="sales-modes" aria-label="Modes de vente">
             <span>Vente au detail</span>
             <span>Vente en gros</span>
-            <span>Prix de lot sur WhatsApp</span>
           </div>
           <div class="hero-actions">
             <a class="primary-button" href="#catalogue">Voir les produits</a>
@@ -40,16 +44,8 @@
             <p class="eyebrow">Catalogue</p>
             <h2>Tous les produits</h2>
           </div>
-          <label class="search-box">
-            <span>Rechercher</span>
-            <input id="searchInput" type="search" placeholder="Lampe, cuisine, rangement..." autocomplete="off">
-          </label>
         </div>
         <div class="category-tabs" id="categoryTabs" aria-label="Filtrer les categories"></div>
-        <div class="catalogue-meta">
-          <span id="resultCount"></span>
-          <button class="clear-button" id="clearFilters" type="button">Tout afficher</button>
-        </div>
         <div class="product-grid" id="productGrid"></div>
       </section>
 
@@ -79,11 +75,6 @@
       </section>
     </div>
 
-    <footer class="site-footer">
-      <span>MINIPRIX MARKET</span>
-      <span>Static storefront ready for GitHub and Cloudflare Pages.</span>
-    </footer>
-
-    <script src="script.js?v=20260623-no-badges"></script>
+    <script src="script.js?v=20260623-simple-whatsapp"></script>
   </body>
 </html>

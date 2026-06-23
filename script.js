@@ -1,5 +1,16 @@
 const WHATSAPP_NUMBER = "2250788038502";
 
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.addEventListener("load", () => {
+  if (location.hash) {
+    history.replaceState(null, "", `${location.pathname}${location.search}`);
+  }
+  window.scrollTo({ top: 0, left: 0 });
+});
+
 const categoryDetails = {
   "Rangement": {
     label: "Rangement",
@@ -277,15 +288,12 @@ const products = rawProducts.map(([file, title, category]) => {
 });
 
 let activeCategory = "Eclairage";
-let searchTerm = "";
 
 function categoryLabel(category) {
   return categoryDetails[category]?.label || category;
 }
 const productGrid = document.querySelector("#productGrid");
 const categoryTabs = document.querySelector("#categoryTabs");
-const searchInput = document.querySelector("#searchInput");
-const resultCount = document.querySelector("#resultCount");
 const imageModal = document.querySelector("#imageModal");
 const modalImage = document.querySelector("#modalImage");
 const modalTitle = document.querySelector("#modalTitle");
@@ -296,7 +304,7 @@ const modalClose = document.querySelector("#modalClose");
 const modalBackdrop = document.querySelector("#modalBackdrop");
 
 function whatsappLink(productTitle = "votre catalogue") {
-  const message = `Bonjour MINIPRIX MARKET, je suis en Cote d'Ivoire et je souhaite recevoir plus d'informations sur ${productTitle}.`;
+  const message = `Bonjour, je souhaite recevoir plus d'informations sur ${productTitle}.`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
@@ -352,15 +360,12 @@ function renderTabs() {
 function getFilteredProducts() {
   return products.filter((product) => {
     const matchesCategory = activeCategory === "Tous" || product.category === activeCategory;
-    const haystack = `${product.title} ${categoryLabel(product.category)} ${product.category}`.toLowerCase();
-    const matchesSearch = haystack.includes(searchTerm.toLowerCase().trim());
-    return matchesCategory && matchesSearch;
+    return matchesCategory;
   });
 }
 
 function renderProducts() {
   const filtered = getFilteredProducts();
-  resultCount.textContent = `${filtered.length} produit${filtered.length > 1 ? "s" : ""} affiche${filtered.length > 1 ? "s" : ""}`;
 
   if (!filtered.length) {
     productGrid.innerHTML = `<div class="empty-state">Aucun produit ne correspond a cette recherche.</div>`;
@@ -390,19 +395,6 @@ function renderProducts() {
   `).join("");
 
 }
-
-searchInput.addEventListener("input", (event) => {
-  searchTerm = event.target.value;
-  renderProducts();
-});
-
-document.querySelector("#clearFilters").addEventListener("click", () => {
-  activeCategory = "Tous";
-  searchTerm = "";
-  searchInput.value = "";
-  renderTabs();
-  renderProducts();
-});
 
 productGrid.addEventListener("click", (event) => {
   const trigger = event.target.closest("[data-open-image]");
