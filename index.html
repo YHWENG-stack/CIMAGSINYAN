@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="utf-8">
@@ -8,31 +8,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260623-no-badges">
   </head>
   <body>
-    <header class="site-header" id="top">
-      <a class="brand" href="#top" aria-label="MINIPRIX MARKET accueil">
-        <span>MINIPRIX MARKET</span>
-      </a>
-      <nav class="nav-links" aria-label="Navigation principale">
-        <a href="#catalogue">Catalogue</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="header-action" id="headerWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
-    </header>
-
     <main>
       <section class="hero">
         <div class="hero-media" aria-hidden="true">
-          <img src="2026-06/Eclairage/873C5991-1DD0-4957-9D02-FE9AA818D8DA.png" alt="">
+          <img src="assets/hero-ring-light.webp" alt="">
         </div>
         <div class="hero-content">
           <p class="eyebrow">Selection lifestyle 2026</p>
           <h1>MINIPRIX MARKET</h1>
-          <p class="hero-copy">Vente au détail et en gros, prix abordables, contact direct sur WhatsApp.</p>
+          <p class="hero-copy">Vente au d&eacute;tail et en gros, prix abordables, contact direct sur WhatsApp.</p>
           <p class="location-note">ADJAME, ABIDJAN</p>
           <p class="service-note">Cote d'Ivoire uniquement.</p>
+          <div class="sales-modes" aria-label="Modes de vente">
+            <span>Vente au detail</span>
+            <span>Vente en gros</span>
+            <span>Prix de lot sur WhatsApp</span>
+          </div>
           <div class="hero-actions">
             <a class="primary-button" href="#catalogue">Voir les produits</a>
             <a class="secondary-button" id="heroWhatsapp" target="_blank" rel="noopener">Demander un devis</a>
@@ -62,18 +56,34 @@
       <section class="contact-section" id="contact">
         <div>
           <p class="eyebrow">Contact direct</p>
-          <h2>Une question sur un produit ou un lot?</h2>
-          <p>Envoyez un message WhatsApp et indiquez l'article souhaite. Les boutons du catalogue ajoutent automatiquement le nom du produit. MINIPRIX MARKET sert uniquement les clients situes en Cote d'Ivoire.</p>
+          <h2>Une question sur un produit, un lot ou une commande en gros?</h2>
+          <p>Envoyez un message WhatsApp et indiquez l'article souhaite. Les boutons du catalogue ajoutent automatiquement le nom du produit. MINIPRIX MARKET propose la vente au detail et en gros, uniquement pour les clients situes en Cote d'Ivoire.</p>
         </div>
         <a class="primary-button whatsapp-large" id="footerWhatsapp" target="_blank" rel="noopener">Contacter sur WhatsApp</a>
       </section>
     </main>
+
+    <div class="image-modal" id="imageModal" hidden>
+      <button class="modal-backdrop" id="modalBackdrop" type="button" aria-label="Fermer"></button>
+      <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" id="modalClose" type="button">Fermer</button>
+        <div class="modal-image-wrap">
+          <img id="modalImage" src="" alt="">
+        </div>
+        <div class="modal-content">
+          <p class="eyebrow" id="modalCategory"></p>
+          <h2 id="modalTitle"></h2>
+          <p class="modal-price" id="modalPrice"></p>
+          <a class="primary-button" id="modalWhatsapp" target="_blank" rel="noopener">Demander sur WhatsApp</a>
+        </div>
+      </section>
+    </div>
 
     <footer class="site-footer">
       <span>MINIPRIX MARKET</span>
       <span>Static storefront ready for GitHub and Cloudflare Pages.</span>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260623-no-badges"></script>
   </body>
 </html>
