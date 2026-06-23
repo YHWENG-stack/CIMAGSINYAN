@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260623-cool-tone">
+    <link rel="stylesheet" href="styles.css?v=20260623-image-loader">
   </head>
   <body>
     <a class="mobile-catalogue-shortcut" href="#catalogue" aria-label="Retour au catalogue">
@@ -64,6 +64,10 @@
       <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <button class="modal-close" id="modalClose" type="button">Fermer</button>
         <div class="modal-image-wrap">
+          <div class="modal-loader" id="modalLoader" role="status" aria-live="polite">
+            <span></span>
+            Chargement de l'image
+          </div>
           <img id="modalImage" src="" alt="">
         </div>
         <div class="modal-content">
@@ -75,6 +79,6 @@
       </section>
     </div>
 
-    <script src="script.js?v=20260623-simple-whatsapp"></script>
+    <script src="script.js?v=20260623-image-loader"></script>
   </body>
 </html>

@@ -552,6 +552,7 @@ img {
 }
 
 .modal-image-wrap {
+  position: relative;
   display: grid;
   place-items: center;
   min-height: 360px;
@@ -564,6 +565,49 @@ img {
   height: 100%;
   max-height: 86vh;
   object-fit: contain;
+  opacity: 1;
+  transition: opacity 240ms ease;
+}
+
+.modal-image-wrap img.is-loading {
+  opacity: 0;
+}
+
+.modal-loader {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 12px;
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(16, 22, 23, 0.94), rgba(16, 22, 23, 0.82));
+  color: rgba(251, 252, 250, 0.88);
+  font-size: 13px;
+  font-weight: 800;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.modal-loader.is-visible {
+  opacity: 1;
+}
+
+.modal-loader span {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(251, 252, 250, 0.28);
+  border-top-color: var(--gold);
+  border-radius: 999px;
+  animation: spin 780ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .modal-content {

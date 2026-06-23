@@ -302,6 +302,7 @@ const modalPrice = document.querySelector("#modalPrice");
 const modalWhatsapp = document.querySelector("#modalWhatsapp");
 const modalClose = document.querySelector("#modalClose");
 const modalBackdrop = document.querySelector("#modalBackdrop");
+const modalLoader = document.querySelector("#modalLoader");
 
 function whatsappLink(productTitle = "votre catalogue") {
   const message = `Bonjour, je souhaite recevoir plus d'informations sur ${productTitle}.`;
@@ -319,7 +320,9 @@ function openImageModal(productId) {
   const product = products.find((item) => item.id === Number(productId));
   if (!product) return;
 
-  modalImage.src = product.largeImage;
+  modalLoader.classList.add("is-visible");
+  modalImage.classList.add("is-loading");
+  modalImage.removeAttribute("src");
   modalImage.alt = `${product.title} - MINIPRIX MARKET`;
   modalTitle.textContent = product.title;
   modalCategory.textContent = categoryLabel(product.category);
@@ -328,11 +331,14 @@ function openImageModal(productId) {
   imageModal.hidden = false;
   document.body.classList.add("modal-open");
   modalClose.focus();
+  modalImage.src = product.largeImage;
 }
 
 function closeImageModal() {
   imageModal.hidden = true;
   modalImage.src = "";
+  modalImage.classList.add("is-loading");
+  modalLoader.classList.remove("is-visible");
   document.body.classList.remove("modal-open");
 }
 
@@ -404,6 +410,11 @@ productGrid.addEventListener("click", (event) => {
 
 modalClose.addEventListener("click", closeImageModal);
 modalBackdrop.addEventListener("click", closeImageModal);
+
+modalImage.addEventListener("load", () => {
+  modalImage.classList.remove("is-loading");
+  modalLoader.classList.remove("is-visible");
+});
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && !imageModal.hidden) closeImageModal();
